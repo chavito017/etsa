@@ -51,7 +51,7 @@ class CategoriatallerEliminar(SuccessMessageMixin, DeleteView):
         messages.success (self.request, (success_message))       
         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
-    #----------------------------------------------Categoriataller-----------------------------------------------------#
+    #----------------------------------------------fin Categoriataller-----------------------------------------------------#
 
 # #-----------------------------------Servicio-----------------------------------------------------#
 # class ListadoServicio(CreateView,ListView,SuccessMessageMixin):
@@ -87,4 +87,39 @@ class CategoriatallerEliminar(SuccessMessageMixin, DeleteView):
 #         messages.success (self.request, (success_message))       
 #         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
-#     #-----------------------------------Regional-----------------------------------------------------#
+#     #-----------------------------------servisio-----------------------------------------------------#
+# #-----------------------------------Servicio-----------------------------------------------------#
+class ListadoUsuario(CreateView,ListView,SuccessMessageMixin):
+
+    model = Usuario
+    form = Usuario
+    fields = "__all__"
+    
+    success_message ='Usuario creado correctamente'
+    def get_success_url(self):        
+        return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer' 
+    
+class UsuarioDetalle (DetailView):
+    model =Usuario
+
+class UsuarioActualizar(SuccessMessageMixin,UpdateView):
+    model =Usuario
+    form = Usuario
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'regional' de nuestra Base de Datos 
+    success_message = 'Usuario Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
+    
+class UsuarioEliminar(SuccessMessageMixin, DeleteView): 
+    model = Usuario
+    form = Usuario
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Usuario Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
+    
+#     #-----------------------------------servisio-----------------------------------------------------#
