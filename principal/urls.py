@@ -19,23 +19,23 @@ path('Categoriataller/eliminar/<int:pk>', CategoriatallerEliminar.as_view(), nam
  #---------------------------------------------------URL Categoriataller ------------------------------------------------------------------------#
  
 
-# path('parametros/',Parametros, name='leerpar'),
-# #--------------------------------------------URL Servicio ------------------------------------------------------------------------#
-    
-# path('Servicio/', ListadoServicio.as_view(template_name = "crud/Servicio/tables.html"), name='leerre'),
 
-# # La ruta 'detalles' en donde mostraremos una pagina con los detalles de un Categoria o registro 
-# path('Servicio/detalle/<int:pk>', ServiciolDetalle.as_view(template_name = "crud/Servicio/detalle.html"), name='detallesre'),
-
-# # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
-# path('Servicio/editar/<int:pk>', ServicioActualizar.as_view(template_name = "crud/Servicio/actualizar.html"), name='actualizarre'), 
-
-# # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
-# path('Servicio/eliminar/<int:pk>', ServicioEliminar.as_view(), name='crud/Servicio/eliminar.html'),     
 #--------------------------------------------URL Servicio ------------------------------------------------------------------------#
-#--------------------------------------------URL Usuario ------------------------------------------------------------------------#
+    
+path('Servicio/', ListadoServicio.as_view(template_name = "crud/Servicio/tables.html"), name='leerser'),
 
-  path('parametros/',Parametros, name='leerpar'),
+# La ruta 'detalles' en donde mostraremos una pagina con los detalles de un Categoria o registro 
+path('Servicio/detalle/<int:pk>', ServiciolDetalle.as_view(template_name = "crud/Servicio/detalle.html"), name='detallesreser'),
+
+# La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
+path('Servicio/editar/<int:pk>', ServicioActualizar.as_view(template_name = "crud/Servicio/actualizar.html"), name='actualizarreser'), 
+
+# La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
+path('Servicio/eliminar/<int:pk>', ServicioEliminar.as_view(), name='crud/Servicio/eliminar.html'),     
+# --------------------------------------------URL Servicio ------------------------------------------------------------------------#
+
+
+
 #--------------------------------------------------URL Categoriataller ------------------------------------------------------------------------#
     
 path('Usuario/', ListadoUsuario.as_view(template_name = "crud/Usuario/tables.html"), name='leerru'),
@@ -50,5 +50,7 @@ path('Usuario/editar/<int:pk>', UsuarioActualizar.as_view(template_name = "crud/
 path('Usuario/eliminar/<int:pk>', UsuarioEliminar.as_view(), name='crud/Usuario/eliminar.html'),     
  #---------------------------------------------------URL Categoriataller ------------------------------------------------------------------------#
 
+path('usuarioC/', ListadoUsuario.as_view(template_name = "tienda/index_principal.html"), name='tienda'),
+path('usuarioC/detaller<int:pk>', UsuarioDetalle.as_view(template_name = "tienda/index.html"), name='tienda'),
 
 ]

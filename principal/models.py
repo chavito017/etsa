@@ -28,7 +28,9 @@ class Categoriaservicio(models.Model):
     class Meta:
         managed = False
         db_table = 'categoriaservicio'
-
+    def __str__(self):
+            txt='{0}'
+            return txt.format(self.nombre)
 
 class Categoriataller(models.Model):
     descripcion = models.CharField(max_length=45, blank=True, null=True)
@@ -124,6 +126,9 @@ class Servicio(models.Model):
     class Meta:
         managed = False
         db_table = 'servicio'
+    def __str__(self):
+        txt='{0}'
+        return txt.format(self.nombre)   
 
 
 class Tdocumento(models.Model):
@@ -157,6 +162,7 @@ class Usuario(models.Model):
     contrato = models.ForeignKey(Contrato, models.DO_NOTHING)
     tdocumento = models.ForeignKey(Tdocumento, models.DO_NOTHING)
     tpempresario = models.ForeignKey(Tpempresario, models.DO_NOTHING)
+    foto = models.ImageField(upload_to="img/", null=True)
 
     class Meta:
         managed = False

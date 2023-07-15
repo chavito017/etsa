@@ -6,6 +6,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.contrib import messages 
 
+
+
+
+
 # Create your views here.
 def Home(request):
     
@@ -51,44 +55,44 @@ class CategoriatallerEliminar(SuccessMessageMixin, DeleteView):
         messages.success (self.request, (success_message))       
         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
-    #----------------------------------------------fin Categoriataller-----------------------------------------------------#
+ #----------------------------------------------fin Categoriataller-----------------------------------------------------#
 
 # #-----------------------------------Servicio-----------------------------------------------------#
-# class ListadoServicio(CreateView,ListView,SuccessMessageMixin):
+class ListadoServicio(CreateView,ListView,SuccessMessageMixin):
 
-#     model = Servicio
-#     form = Servicio
-#     fields = "__all__"
+    model = Servicio
+    form = Servicio
+    fields = "__all__"
     
-#     success_message ='Servicio creado correctamente'
-#     def get_success_url(self):        
-#         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer' 
+    success_message ='Servicio creado correctamente'
+    def get_success_url(self):        
+        return reverse('principal:leerser') # Redireccionamos a la vista principal 'leer' 
     
-# class ServiciolDetalle (DetailView):
-#     model =Servicio
+class ServiciolDetalle (DetailView):
+    model =Servicio
 
-# class ServicioActualizar(SuccessMessageMixin,UpdateView):
-#     model =Servicio
-#     form = Servicio
-#     fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'regional' de nuestra Base de Datos 
-#     success_message = 'Servicio Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+class ServicioActualizar(SuccessMessageMixin,UpdateView):
+    model =Servicio
+    form = Servicio
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'regional' de nuestra Base de Datos 
+    success_message = 'Servicio Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
-#     def get_success_url(self):               
-#         return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
+    def get_success_url(self):               
+        return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
     
-# class ServicioEliminar(SuccessMessageMixin, DeleteView): 
-#     model = Servicio
-#     form = Servicio
-#     fields = "__all__"     
+class ServicioEliminar(SuccessMessageMixin, DeleteView): 
+    model = Servicio
+    form = Servicio
+    fields = "__all__"     
  
-#     # Redireccionamos a la página principal luego de eliminar un registro o postre
-#     def get_success_url(self): 
-#         success_message = 'Servicio Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
-#         messages.success (self.request, (success_message))       
-#         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Servicio Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
-#     #-----------------------------------servisio-----------------------------------------------------#
-# #-----------------------------------Servicio-----------------------------------------------------#
+
+# #-----------------------------------usuario-----------------------------------------------------#
 class ListadoUsuario(CreateView,ListView,SuccessMessageMixin):
 
     model = Usuario
