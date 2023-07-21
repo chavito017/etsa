@@ -35,8 +35,7 @@ path('Empresa/eliminar/<int:pk>', EmpresaEliminar.as_view(), name='crud/Empresa/
 # --------------------------------------------URL Empresa ------------------------------------------------------------------------#
 
 
-
-#--------------------------------------------------URL Categoriataller ------------------------------------------------------------------------#
+#------------------------------------------------------URL Categoriataller ------------------------------------------------------------------------#
     
 path('Usuario/', ListadoUsuario.as_view(template_name = "crud/Usuario/tables.html"), name='leerru'),
 
@@ -52,5 +51,19 @@ path('Usuario/eliminar/<int:pk>', UsuarioEliminar.as_view(), name='crud/Usuario/
 
 path('usuarioC/', ListadoUsuario.as_view(template_name = "tienda/index_principal.html"), name='tienda'),
 path('usuarioC/detaller<int:pk>', UsuarioDetalle.as_view(template_name = "tienda/index.html"), name='tienda'),
+
+
+#------------------------------------------------------URL Departamento ------------------------------------------------------------------------#   
+path('Departamento/', ListadoDepartamento.as_view(template_name = "crud/Departamento/tables.html"), name='leerde'),
+
+# La ruta 'Departamento' en donde mostraremos una pagina con los detalles de un Categoria o registro 
+path('Departamento/detalle/<int:pk>',DepartamentoDetalle.as_view(template_name = "crud/Departamento/detalle.html"), name='detallesdep'),
+
+# La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
+path('Departamento/editar/<int:pk>', DepartamentoActualizar.as_view(template_name = "crud/Departamento/actualizar.html"), name='actualizarde'), 
+
+# La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
+path('Departamento/eliminar/<int:pk>',DepartamentoEliminar.as_view(), name='crud/Departamento/eliminar.html'),     
+ #---------------------------------------------------URL Departamento ------------------------------------------------------------------------#
 
 ]

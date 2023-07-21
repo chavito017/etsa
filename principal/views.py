@@ -6,10 +6,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.contrib import messages 
 
-
-
-
-
 # Create your views here.
 def Home(request):
     
@@ -21,7 +17,7 @@ def Parametros (request):
 def Login(request):
     return render (request, "login.html")
 
-#-----------------------------------------Categoriataller-----------------------------------------------------#
+#--------------------------------------------------Categoriataller-----------------------------------------------------#
 class ListadoCategoriataller(CreateView,ListView,SuccessMessageMixin):
 
     model = Categoriataller
@@ -57,7 +53,7 @@ class CategoriatallerEliminar(SuccessMessageMixin, DeleteView):
     
  #----------------------------------------------fin Categoriataller-----------------------------------------------------#
 
-# #-----------------------------------Empresa-----------------------------------------------------#
+# #--------------------------------------------------------Empresa-----------------------------------------------------#
 class ListadoEmpresa(CreateView,ListView,SuccessMessageMixin):
 
     model = Empresa
@@ -92,7 +88,7 @@ class EmpresaEliminar(SuccessMessageMixin, DeleteView):
         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
 
-# #-----------------------------------usuario-----------------------------------------------------#
+#------------------------------------------------------usuario-----------------------------------------------------#
 class ListadoUsuario(CreateView,ListView,SuccessMessageMixin):
 
     model = Usuario
@@ -126,4 +122,39 @@ class UsuarioEliminar(SuccessMessageMixin, DeleteView):
         messages.success (self.request, (success_message))       
         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
-#     #-----------------------------------servisio-----------------------------------------------------#
+#----------------------------------------------------------Usuario-----------------------------------------------------#
+#--------------------------------------------------------Departamento-----------------------------------------------------#
+class ListadoDepartamento(CreateView,ListView,SuccessMessageMixin):
+
+    model = Departamento
+    form = Departamento
+    fields = "__all__"
+    
+    success_message ='Departamento creado correctamente'
+    def get_success_url(self):        
+        return reverse('principal:leerde') # Redireccionamos a la vista principal 'leer' 
+    
+class DepartamentoDetalle (DetailView):
+    model =Categoriataller
+
+class DepartamentoActualizar(SuccessMessageMixin,UpdateView):
+    model =Departamento
+    form = Departamento
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'Cateserv' de nuestra Base de Datos 
+    success_message = 'Departamento Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+
+    def get_success_url(self):               
+        return reverse('principal:leerdep') # Redireccionamos a la vista principal 'leer'
+    
+class DepartamentoEliminar(SuccessMessageMixin, DeleteView): 
+    model = Departamento
+    form = Departamento
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Departamento Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('principal:leerde') # Redireccionamos a la vista principal 'leer'
+    
+ #----------------------------------------------fin Categoriataller-----------------------------------------------------#

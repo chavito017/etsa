@@ -66,7 +66,7 @@ class Cuerpofacrura(models.Model):
 class Departamento(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     codigo = models.CharField(max_length=45, blank=True, null=True)
-    municipio = models.ForeignKey('Municipio', models.DO_NOTHING)
+    
 
     class Meta:
         managed = False
@@ -103,6 +103,7 @@ class Faccabeza(models.Model):
 class Municipio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     ciudad_idciudad = models.IntegerField()
+    Departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
 
     class Meta:
         managed = False
