@@ -57,37 +57,37 @@ class CategoriatallerEliminar(SuccessMessageMixin, DeleteView):
     
  #----------------------------------------------fin Categoriataller-----------------------------------------------------#
 
-# #-----------------------------------Servicio-----------------------------------------------------#
-class ListadoServicio(CreateView,ListView,SuccessMessageMixin):
+# #-----------------------------------Empresa-----------------------------------------------------#
+class ListadoEmpresa(CreateView,ListView,SuccessMessageMixin):
 
-    model = Servicio
-    form = Servicio
+    model = Empresa
+    form = Empresa
     fields = "__all__"
     
-    success_message ='Servicio creado correctamente'
+    success_message ='Empresa creado correctamente'
     def get_success_url(self):        
-        return reverse('principal:leerser') # Redireccionamos a la vista principal 'leer' 
+        return reverse('principal:leerem') # Redireccionamos a la vista principal 'leer' 
     
-class ServiciolDetalle (DetailView):
-    model =Servicio
+class EmpresalDetalle (DetailView):
+    model =Empresa
 
-class ServicioActualizar(SuccessMessageMixin,UpdateView):
-    model =Servicio
-    form = Servicio
+class EmpresaActualizar(SuccessMessageMixin,UpdateView):
+    model =Empresa
+    form = Empresa
     fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'regional' de nuestra Base de Datos 
-    success_message = 'Servicio Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+    success_message = 'Empresa Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
     def get_success_url(self):               
         return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
     
-class ServicioEliminar(SuccessMessageMixin, DeleteView): 
-    model = Servicio
-    form = Servicio
+class EmpresaEliminar(SuccessMessageMixin, DeleteView): 
+    model = Empresa
+    form = Empresa
     fields = "__all__"     
  
     # Redireccionamos a la página principal luego de eliminar un registro o postre
     def get_success_url(self): 
-        success_message = 'Servicio Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        success_message = 'Empresa Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
         messages.success (self.request, (success_message))       
         return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
