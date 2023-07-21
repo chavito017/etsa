@@ -167,3 +167,6 @@ class Usuario(models.Model):
     class Meta:
         managed = False
         db_table = 'usuario'
+    def __str__(self):
+        txt='{0}'
+        return txt.format(self.nombre) 

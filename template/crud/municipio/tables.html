@@ -76,7 +76,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title mb-0">Creación de Usuario</h5>
+                <h5 class="card-title mb-0">Creación de Municipio</h5>
               </div>
               <div class="card">
                 <div class="card-body">
@@ -100,8 +100,8 @@
                         <td>
 
                           <div class="col-lg-7">
-                            <label for="idUsuario">Código de Usuario</label>
-                            {{ form.Usuario}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                            <label for="idMunicipio">Código de Municipio</label>
+                            {{ form.Municipio}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                           </div>
                         </td>
                         <td>
@@ -114,88 +114,13 @@
                         <td>
 
                           <div class="col-lg-7">
-                            <label for="apellido">apellido</label>
-                            {{ form.apellido}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                            <label for="ciudad">Ciudad</label>
+                            {{ form.ciudad}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                           </div>
                         </td>
                         <td>
 
-                          <div class="col-lg-7">
-                            <label for="telefono">telefono</label>
-                            {{ form.telefono}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-
-                          <div class="col-lg-7">
-                            <label for="correo">correo</label>
-                            {{ form.correo}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-                        <td>
-
-                          <div class="col-lg-7">
-                            <label for="correo">contraseña</label>
-                            {{ form.contraseña}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-
-                          <div class="col-lg-7">
-                            <label for="genero">genero</label>
-                            {{ form.genero}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-                          <div class="col-lg-7">
-                            <label for="fechanacimiento">fechanacimiento</label>
-                            {{ form.fechanacimiento}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-                          <div class="col-lg-7">
-                            <label for="municipio">municipio</label>
-                            {{ form.municipio}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-                          <div class="col-lg-7">
-                            <label for="contrato">contrato</label>
-                            {{ form.contrato}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        </td>
-                        <td>
-                          <div class="col-lg-7">
-                            <label for="tdocumento">tipo de documento</label>
-                            {{ form.tdocumento}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
-                        <td>
-                          <div class="col-lg-7">
-                            <label for="tpempresario">tipo de empresario</label>
-                            {{ form.tpempresario}}
-                            <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                          </div>
                       </tr>
-                      <tr>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                      </tr>
-
-
-
 
                       <div>
                         <button type="submit" class="btn btn-primary">Aceptar</button>
@@ -217,44 +142,34 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Lista de Usuario</h5>
+                  <h5 class="card-title">Lista de Municipio</h5>
                   <div class="table-responsive">
                     <table id="zero_config" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Código de Usuario</th>
+                          <th>Código de Municipio</th>
                           <th>Nombre</th>
-                          <th>apellido</th>
-                          <th>telefono</th>
-                          <th>correo</th>
-                          <th>contraseña</th>
-                          <th>genero</th>
-                          <th>fechanacimiento</th>
+                          <th>Ciudad</th>
+
 
                         </tr>
                       </thead>
                       <tbody>
-                        {% for Usuario in object_list %}
+                        {% for Municipio in object_list %}
                         <tr>
-                          <td>{{ Usuario.idUsuario}}</td>
-                          <td>{{ Usuario.nombre}}</td>
-                          <td>{{ Usuario.apellido}}</td>
-                          <td>{{ Usuario.telefono}}</td>
-                          <td>{{ Usuario.correo}}</td>
-                          <td>{{ Usuario.contrasña}}</td>
-                          <td>{{ Usuario.genero}}</td>
-                          <td>{{ Usuario.fechanacimiento}}</td>
-
+                          <td>{{ Municipio.idMunicipio}}</td>
+                          <td>{{ Municipio.nombre}}</td>
+                          <td>{{ Municipio.ciudad}}</td>
 
                           <td>
-                            <form method="POST" action="eliminar/{{Usuario.idUsuario}}">
+                            <form method="POST" action="eliminar/{{Municipio.idMunicipio}}">
                               {% csrf_token %}
                               <div class="btn-group">
 
                                 <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-                                <a href="detalle/{{Usuario.idUsuario}}" title="Ver" type="button"
+                                <a href="detalle/{{Municipio.idMunicipio}}" title="Ver" type="button"
                                   class="btn btn-success">Ver </a>
-                                <a href="editar/{{Usuario.idUsuario}}" title="Editar" type="button"
+                                <a href="editar/{{Municipio.idMunicipio}}" title="Editar" type="button"
                                   class="btn btn-primary">Editar </a>
                                 <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                                   Eliminar
