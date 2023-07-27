@@ -44,7 +44,6 @@ class Categoriataller(models.Model):
 class Contrato(models.Model):
     descripcion = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda los terminos y condiciones de cada contrato ')
     nombre = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre del contrato ')
-    persona_idpersona = models.IntegerField()
 
     class Meta:
         managed = False
@@ -78,7 +77,6 @@ class Empresa(models.Model):
     telefono = models.IntegerField(blank=True, null=True, db_comment='guarda el contacto de la empresa ')
     correo = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el correo de la empresa ')
     razonsocial = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre juridico de la empresa')
-    catgtall_id = models.IntegerField()
     municipio = models.ForeignKey('Municipio', models.DO_NOTHING)
     categoriataller = models.ForeignKey(Categoriataller, models.DO_NOTHING)
 
@@ -103,11 +101,12 @@ class Faccabeza(models.Model):
 class Municipio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     ciudad_idciudad = models.IntegerField()
-    Departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
+    departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'municipio'
+    
 
 
 class Pagos(models.Model):

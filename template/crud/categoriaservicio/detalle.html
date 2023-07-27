@@ -1,11 +1,11 @@
 {# Cargamos la librería #}
 {% load bootstrap4 %}
-
+ 
 {# CSS Bootstrap #}
-{% bootstrap_css %}
+{% bootstrap_css %} 
 
 {# Widget Tweaks #}
-{% load widget_tweaks %}
+{% load widget_tweaks %}  
 
 {% load static %}
 <!DOCTYPE html>
@@ -15,15 +15,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
-    <meta name="description" content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
+    <meta
+      name="keywords"
+      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"
+    />
+    <meta
+      name="description"
+      content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+    />
     <meta name="robots" content="noindex,nofollow" />
     <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/assets/images/favicon.png"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/assets/extra-libs/multicheck/multicheck.css" />
-    <link href="/static/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link rel="stylesheet"type="text/css"href="/static/assets/extra-libs/multicheck/multicheck.css"/>
+    <link href="/static/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"rel="stylesheet"/>
     <link href="/static/dist/css/style.min.css" rel="stylesheet" />
     {% load bootstrap4 %}
     {% load static %}
@@ -31,19 +42,28 @@
   </head>
 
   <body>
+   
     <div class="preloader">
       <div class="lds-ripple">
         <div class="lds-pos"></div>
         <div class="lds-pos"></div>
       </div>
     </div>
-
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin5"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
       <!-- ============================================================== -->
       <!-- Topbar header - style you can find in pages.scss -->
       <!-- ============================================================== -->
       <header class="topbar" data-navbarbg="skin5">
-        {% include 'nav.html' %}
+        {% include "nav.html" %}
       </header>
 
       <div class="page-wrapper">
@@ -57,10 +77,10 @@
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                      <a href="#">Home</a>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
                   </ol>
                 </nav>
               </div>
@@ -71,7 +91,7 @@
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- Container fluid -->
+        <!-- Container fluid  -->
         <!-- ============================================================== -->
         <div class="container-fluid">
           <!-- ============================================================== -->
@@ -79,36 +99,33 @@
           <!-- ============================================================== -->
           <div class="row">
             <div class="col-12">
+             
+         
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Empresa</h5>
+                  <h5 class="card-title">categoria Servicio</h5>
                   <div class="table-responsive">
-                    <table id="zero_config" class="table table-striped table-bordered">
+                    <table id="zero_config"class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Código de Empresa</th>
+                          <th>Código de Categoriaservicio</th>
+                          <th>Descripcion</th>
                           <th>Nombre</th>
-                          <th>Direecion</th>
-                          <th>Telefono</th>
-                          <th>Correo</th>
-                          <th>Razon Social</th>
-                          {% comment %} <th>catgball</th> {% endcomment %}
-                          <th>Cateserv</th>
+                          <th>Precio</th>                         
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>{{ empresa.id }}</td>
-                          <td>{{ empresa.nombre }}</td>
-                          <td>{{ empresa.direccion }}</td>
-                          <td>{{ empresa.telefono }}</td>
-                          <td>{{ empresa.correo }}</td>
-                          <td>{{ empresa.razonSocial }}</td>
-                          <td>{{ empresa.municipio_id }}</td>
-                          <td>{{ empresa.categoriataller_id }}</td>
-
-                        </tr>
+                        
+                          <tr>
+                            <td>{{ categoriaservicio.id}}</td>
+                            <td>{{ categoriaservicio.nombre}}</td>
+                            <td>{{ categoriaservicio.descripcion}}</td>
+                            <td>{{ categoriaservicio.precio}}</td>
+                            {% comment %} <td>{{ categoriaservicio.departamento_iddepartamento}}</td>  aqui puedesponer la llave foranea {% endcomment %}
+                          </tr>
+                      
                       </tbody>
+                      
                     </table>
                     <!-- Botón para volver a la vista principal (Home) -->
                     <a href="../" type="submit" class="btn btn-primary">Volver</a>
@@ -117,21 +134,26 @@
               </div>
             </div>
           </div>
+          
         </div>
+        
+        
+       
       </div>
+      
     </div>
-
+    
     <script src="/static/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="/static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="/static/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
     <script src="/static/assets/extra-libs/sparkline/sparkline.js"></script>
-    <!-- Wave Effects -->
+    <!--Wave Effects -->
     <script src="/static/dist/js/waves.js"></script>
-    <!-- Menu sidebar -->
+    <!--Menu sidebar -->
     <script src="/static/dist/js/sidebarmenu.js"></script>
-    <!-- Custom JavaScript -->
+    <!--Custom JavaScript -->
     <script src="/static/dist/js/custom.min.js"></script>
     <!-- this page js -->
     <script src="/static/assets/extra-libs/DataTables/datatables.min.js"></script>
@@ -139,7 +161,7 @@
       /****************************************
        *       Basic Table                   *
        ****************************************/
-      $('#zero_config').DataTable()
+      $("#zero_config").DataTable();
     </script>
   </body>
 </html>
