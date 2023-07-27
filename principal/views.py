@@ -149,9 +149,9 @@ class DepartamentoActualizar(SuccessMessageMixin,UpdateView):
 class DepartamentoEliminar(SuccessMessageMixin, DeleteView): 
     model = Departamento
     form = Departamento
- #------------------------------------------------------servisio-----------------------------------------------------#
+ #------------------------------------------------------------------------------servisio-----------------------------------------------------#
 
- #---------------------------------------------------------------Municipio-----------------------------------------------------#
+ #------------------------------------------------------------------------------Municipio-----------------------------------------------------#
 class ListadoMunicipio(CreateView,ListView,SuccessMessageMixin):
 
     model = Municipio
@@ -168,11 +168,11 @@ class MunicipioDetalle (DetailView):
 class MunicipioActualizar(SuccessMessageMixin,UpdateView):
     model =Municipio
     form = Municipio
-    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'municipio' de nuestra Base de Datos 
+    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'Cateserv' de nuestra Base de Datos 
     success_message = 'Municipio Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
     def get_success_url(self):               
-        return reverse('principal:leermun') # Redireccionamos a la vista principal 'leer'
+        return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
     
 class MunicipioEliminar(SuccessMessageMixin, DeleteView): 
     model = Municipio

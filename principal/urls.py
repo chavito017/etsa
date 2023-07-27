@@ -64,7 +64,9 @@ path('Departamento/editar/<int:pk>', DepartamentoActualizar.as_view(template_nam
 # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
 path('Departamento/eliminar/<int:pk>',DepartamentoEliminar.as_view(), name='crud/Departamento/eliminar.html'),     
  #---------------------------------------------------URL Departamento ------------------------------------------------------------------------#
-#--------------------------------------------URL Municipio ------------------------------------------------------------------------#
+
+
+#--------------------------------------------------------------------------------------------URL Municipio ------------------------------------------------------------------------#
     
 path('Municipio/', ListadoMunicipio.as_view(template_name = "crud/Municipio/tables.html"), name='leermun'),
 
@@ -72,7 +74,7 @@ path('Municipio/', ListadoMunicipio.as_view(template_name = "crud/Municipio/tabl
 path('Municipio/detalle/<int:pk>', MunicipioDetalle.as_view(template_name = "crud/Municipio/detalle.html"), name='detallesmun'),
 
 # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
-path('Municipio/editar/<int:pk>', MunicipioActualizar.as_view(template_name = "crud/Municipio/actualizar.html"), name='actualizarre'), 
+path('Municipio/editar/<int:pk>', MunicipioActualizar.as_view(template_name = "crud/Municipio/actualizar.html"), name='actualizarmun'), 
 
 # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
 path('Municipio/eliminar/<int:pk>', MunicipioEliminar.as_view(), name='crud/Municipio/eliminar.html'),     
