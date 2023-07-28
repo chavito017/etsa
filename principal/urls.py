@@ -25,7 +25,7 @@ path('Categoriataller/eliminar/<int:pk>', CategoriatallerEliminar.as_view(), nam
 path('Empresa/', ListadoEmpresa.as_view(template_name = "crud/Empresa/tables.html"), name='leerem'),
 
 # La ruta 'detalles' en donde mostraremos una pagina con los detalles de un Categoria o registro 
-path('Empresa/detalle/<int:pk>', EmpresalDetalle.as_view(template_name = "crud/Empresa/detalle.html"), name='detallesem'),
+path('Empresa/detalle/<int:pk>', EmpresaDetalle.as_view(template_name = "crud/Empresa/detalle.html"), name='detallesem'),
 
 # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
 path('Empresa/editar/<int:pk>', EmpresaActualizar.as_view(template_name = "crud/Empresa/actualizar.html"), name='actualizarem'), 

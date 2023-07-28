@@ -14537,3 +14537,10 @@ label {
     left: -19px
   }
 }
+
+.container-fluid, .videoIntro {
+  width: 100%; /* Ocupar el ancho completo del contenedor */
+  height: 100%; /* La altura se ajustará automáticamente proporcionalmente al ancho */
+  border: 2px solid #ccc; /* Borde alrededor del video */
+  border-radius: 8px; /* Bordes redondeados para el video */
+}

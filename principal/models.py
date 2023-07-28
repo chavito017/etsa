@@ -107,8 +107,7 @@ class Faccabeza(models.Model):
 
 class Municipio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
-    ciudad_idciudad = models.IntegerField()
-    Departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
+    Departamento_id = models.ForeignKey('Departamento', models.DO_NOTHING, db_column='Departamento_id')
 
     class Meta:
         managed = False

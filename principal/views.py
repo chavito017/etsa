@@ -63,7 +63,7 @@ class ListadoEmpresa(CreateView,ListView,SuccessMessageMixin):
     def get_success_url(self):        
         return reverse('principal:leerem') # Redireccionamos a la vista principal 'leer' 
     
-class EmpresalDetalle (DetailView):
+class EmpresaDetalle (DetailView):
     model =Empresa
 
 class EmpresaActualizar(SuccessMessageMixin,UpdateView):
@@ -151,6 +151,13 @@ class DepartamentoActualizar(SuccessMessageMixin,UpdateView):
 class DepartamentoEliminar(SuccessMessageMixin, DeleteView): 
     model = Departamento
     form = Departamento
+    fields = "__all__"     
+ 
+    # Redireccionamos a la página principal luego de eliminar un registro o postre
+    def get_success_url(self): 
+        success_message = 'Departamento Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        messages.success (self.request, (success_message))       
+        return reverse('principal:leerdep') # Redireccionamos a la vista principal 'leer'
 #---------------------------------------------------------------fin Departamento--------------------------------------------------------------#
 
 #--------------------------------------------------------------------Municipio---------------------------------------------------------------#
@@ -174,7 +181,7 @@ class MunicipioActualizar(SuccessMessageMixin,UpdateView):
     success_message = 'Municipio Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
     def get_success_url(self):               
-        return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
+        return reverse('principal:leermun') # Redireccionamos a la vista principal 'leer'
     
 class MunicipioEliminar(SuccessMessageMixin, DeleteView): 
     model = Municipio

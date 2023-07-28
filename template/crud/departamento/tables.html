@@ -60,7 +60,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">departamento</h4>
+              <h4 class="page-title">Departamento</h4>
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -80,7 +80,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title mb-0">Creación de departamento</h5>
+                  <h5 class="card-title mb-0">Creación de Departamento</h5>
                 </div>
                 <div class="card">
                   <div class="card-body">
@@ -152,19 +152,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                        {% for departamento in object_list %}
+                        {% for Departamento in object_list %}
                           <tr>
-                            <td>{{ departamento.id}}</td>
-                            <td>{{ departamento.nombre}}</td>
-                            <td>{{ departamento.codigo }}</td>                          
+                            <td>{{ Departamento.id}}</td>
+                            <td>{{ Departamento.nombre}}</td>
+                            <td>{{ Departamento.codigo }}</td>                          
                             <td>
-                              <form method="POST" action="eliminar/{{departamento.id}}">
+                              <form method="POST" action="eliminar/{{Departamento.id}}">
                                   {% csrf_token %}
                                   <div class="btn-group">
 
                                       <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-                                      <a href="detalle/{{departamento.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                                      <a href="editar/{{departamento.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                      <a href="detalle/{{Departamento.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                                      <a href="editar/{{Departamento.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
                                       <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                                         Eliminar
                                       </button>

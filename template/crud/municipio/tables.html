@@ -56,7 +56,7 @@
       <div class="page-breadcrumb">
         <div class="row">
           <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Regional</h4>
+            <h4 class="page-title">Municipio</h4>
             <div class="ms-auto text-end">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -101,7 +101,7 @@
 
                           <div class="col-lg-7">
                             <label for="id">Código de Municipio</label>
-                            {{ form.municipio}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                            {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                           </div>
                         </td>
                         <td>
@@ -113,11 +113,10 @@
                         </td>
                         <td>
                           <div class="col-lg-7">
-                            <label for="ciudad">Ciudad</label>
-                            {{ form.ciudad}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                              <label for="Departamento_id " >Departamento</label>
+                              {{ form.Departamento_id }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
                           </div>
-                        </td>
-                        <td>
+                      </td> 
                       </tr>
                       <div>
                         <button type="submit" class="btn btn-primary">Aceptar</button>
@@ -151,21 +150,21 @@
                         </tr>
                       </thead>
                       <tbody>
-                        {% for municipio in object_list %}
+                        {% for Municipio in object_list %}
                         <tr>
-                          <td>{{ municipio.id}}</td>
-                          <td>{{ municipio.nombre}}</td>
-                          <td>{{ municipio.Departamento_id}}</td>
+                          <td>{{ Municipio.id}}</td>
+                          <td>{{ Municipio.nombre}}</td>
+                          <td>{{ Municipio.Departamento_id}}</td>
 
                           <td>
-                            <form method="POST" action="eliminar/{{municipio.id}}">
+                            <form method="POST" action="eliminar/{{Municipio.id}}">
                               {% csrf_token %}
                               <div class="btn-group">
 
                                 <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-                                <a href="detalle/{{municipio.id}}" title="Ver" type="button"
+                                <a href="detalle/{{Municipio.id}}" title="Ver" type="button"
                                   class="btn btn-success">Ver </a>
-                                <a href="editar/{{municipio.id}}" title="Editar" type="button"
+                                <a href="editar/{{Municipio.id}}" title="Editar" type="button"
                                   class="btn btn-primary">Editar </a>
                                 <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                                   Eliminar
