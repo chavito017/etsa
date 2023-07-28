@@ -97,6 +97,7 @@
                              
                               <div class="card-bodys">
                                  
+
                                   <form method="post" enctype="multipart/form-data">
                   
                                       {# Pasamos el 'csrf_token' de seguridad para poder crear un nuevo registro #}
@@ -111,7 +112,7 @@
                                                   {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                                               </div>
                                           </td>
-
+                                          
                                           <td>
                                               <div class="col-lg-7">
                                                   <label for="nombre" >Nombre</label>
@@ -119,19 +120,18 @@
                                               </div>
                                           </td>                                    
                                       </tr>
-                                      <td>
-                                        <div class="col-lg-7">
-                                            <label for="Categoriaservicio_id " >categoria delservicio</label>
-                                            {{ form.Categoriaservicio_id }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
-                                        </div>
-                                    </td>                                    
-                                </tr>
-                                     
+
+                                      
+                                      
                                         <div class="col-lg-7">              
                                           <button type="submit" class="btn btn-primary">Aceptar</button> 
                                           <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
                                       </div> 
 
+                                                         
+                    
+                                      
+                                      
                                   </form>
                               </div>
                           </tr>

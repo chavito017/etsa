@@ -112,6 +112,7 @@ class Municipio(models.Model):
     class Meta:
         managed = False
         db_table = 'municipio'
+    
 
 class Pagos(models.Model):
     precio = models.FloatField(blank=True, null=True)
