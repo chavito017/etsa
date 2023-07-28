@@ -40,11 +40,14 @@ class Categoriataller(models.Model):
         managed = False
         db_table = 'categoriataller'
 
+    def __str__(self):
+        txt='{0}'
+        return txt.format(self.nombre)
 
+ 
 class Contrato(models.Model):
     descripcion = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda los terminos y condiciones de cada contrato ')
     nombre = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre del contrato ')
-    persona_idpersona = models.IntegerField()
 
     class Meta:
         managed = False
@@ -66,9 +69,8 @@ class Cuerpofacrura(models.Model):
 class Departamento(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     codigo = models.CharField(max_length=45, blank=True, null=True)
-
-    # departamento_id
     
+
     class Meta:
         managed = False
         db_table = 'departamento'
@@ -90,7 +92,6 @@ class Empresa(models.Model):
         managed = False
         db_table = 'empresa'
 
-
 class Faccabeza(models.Model):
     cliente = models.CharField(max_length=45, blank=True, null=True)
     fecha = models.DateField(blank=True, null=True)
@@ -106,7 +107,8 @@ class Faccabeza(models.Model):
 
 class Municipio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
-    Departamento_id = models.ForeignKey('Departamento', models.DO_NOTHING, db_column='Departamento_id')
+    ciudad_idciudad = models.IntegerField()
+    Departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
 
     class Meta:
         managed = False
