@@ -103,33 +103,30 @@
          
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">municipio</h5>
+                  <h5 class="card-title">Tpempresario</h5>
                   <div class="table-responsive">
                     <table id="zero_config"class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Código de municipio</th>
-                          <th>Nombre</th>
-                          <th>Ciudad</th>
-                          <th>Departamento</th> 
-
-                       
+                          <th>Código de Tpempresario</th>
+                          <th>Descripcion</th>
+                          <th>Nombre</th>                         
                         </tr>
                       </thead>
                       <tbody>
+                        
                           <tr>
-                            <td>{{ municipio.idMunicipioo}}</td>
-                            <td>{{ municipio.nombre}}</td>
-                            <td>{{ municipio.ciudad}}</td>
-                            <td>{{ municipio.departamento_id}}</td>
-
+                            <td>{{ Tpempresario.id}}</td>
+                            <td>{{ Tpempresario.nombre}}</td>
+                            <td>{{ Tpempresario.descripcion}}</td>
+                            {% comment %} <td>{{ categoriataller.departamento_iddepartamento}}</td>  aqui puedesponer la llave foranea {% endcomment %}
                           </tr>
                       
                       </tbody>
                       
                     </table>
                     <!-- Botón para volver a la vista principal (Home) -->
-                    <a href="{% url 'principal:leermun' %}" type="submit" class="btn btn-primary">Volver</a>
+                    <a href="../" type="submit" class="btn btn-primary">Volver</a>
                   </div>
                 </div>
               </div>
@@ -137,7 +134,9 @@
           </div>
           
         </div>
-
+        
+        
+       
       </div>
       
     </div>

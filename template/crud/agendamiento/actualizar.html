@@ -107,28 +107,47 @@
                                           <td >
                                               
                                               <div class="col-lg-7">
-                                                  <label for="id">Código de Categoria Taller</label>
+                                                  <label for="id">Código de Agendamiento</label>
                                                   {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                                               </div>
                                           </td>
-                                          <td >
 
-                                              <div class="col-lg-7" >
-                                                  <label for="descripcion">Descripcion</label>
-                                                  {{ form.descripcion  }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
-                                              </div>
-                                          </td>
                                           <td>
                                               <div class="col-lg-7">
                                                   <label for="nombre" >Nombre</label>
                                                   {{ form.nombre}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
                                               </div>
-                                          </td>                                    
+                                          </td> 
+                                          <td>
+                                            <div class="col-lg-7">
+                                                <label for="lugar" >Lugar</label>
+                                                {{ form.lugar}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                            </div>
+                                        </td> 
+                                        <td>
+                                            <div class="col-lg-7">
+                                                <label for="hora" >Hora</label>
+                                                {{ form.hora}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                            </div>
+                                        </td>                                    
                                       </tr>
+                                      <td>
+                                        <div class="col-lg-7">
+                                            <label for="Usuario_id " >usuario</label>
+                                            {{ Usuario_id }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="col-lg-7">
+                                            <label for="Servicio_id " >servicio</label>
+                                            {{ Servicio_id }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                    </td>                                    
+                                </tr>
                                      
                                         <div class="col-lg-7">              
                                           <button type="submit" class="btn btn-primary">Aceptar</button> 
-                                          <a href="{% url 'principal:leerre' %}" type="submit" class="btn btn-primary">Cancelar</a>
+                                          <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
                                       </div> 
 
                                   </form>

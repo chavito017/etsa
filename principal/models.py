@@ -12,8 +12,8 @@ class Agendamiento(models.Model):
     hora = models.TimeField(blank=True, null=True)
     lugar = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda la ubicacion de la cita ')
     nombre = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre de quien cita ')
-    usuario = models.ForeignKey('Usuario', models.DO_NOTHING)
-    servicio = models.ForeignKey('Servicio', models.DO_NOTHING)
+    Usuario_id = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='Usuario_id')
+    Servicio_id = models.ForeignKey('Servicio', models.DO_NOTHING, db_column='Servicio_id')
 
     class Meta:
         managed = False
@@ -70,9 +70,13 @@ class Departamento(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     codigo = models.CharField(max_length=45, blank=True, null=True)
     
+
     class Meta:
         managed = False
         db_table = 'departamento'
+def __str__(self):
+        txt='{0}'
+        return txt.format(self.nombre)
 
 class Empresa(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre de la empresa ')
@@ -80,8 +84,9 @@ class Empresa(models.Model):
     telefono = models.IntegerField(blank=True, null=True, db_comment='guarda el contacto de la empresa ')
     correo = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el correo de la empresa ')
     razonsocial = models.CharField(max_length=45, blank=True, null=True, db_comment='guarda el nombre juridico de la empresa')
-    municipio = models.ForeignKey('Municipio', models.DO_NOTHING)
-    categoriataller = models.ForeignKey(Categoriataller, models.DO_NOTHING)
+    Municipio_id = models.ForeignKey('Municipio', models.DO_NOTHING, db_column='Municipio_id')
+    Categoriataller_id = models.ForeignKey('Categoriataller', models.DO_NOTHING, db_column='Categoriataller_id')
+    
 
     class Meta:
         managed = False
@@ -103,14 +108,12 @@ class Faccabeza(models.Model):
 class Municipio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
     ciudad_idciudad = models.IntegerField()
-    departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
-    
+    Departamento = models.ForeignKey('Departamento', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'municipio'
     
-
 
 class Pagos(models.Model):
     precio = models.FloatField(blank=True, null=True)
@@ -124,7 +127,7 @@ class Pagos(models.Model):
 
 class Servicio(models.Model):
     nombre = models.CharField(max_length=45, blank=True, null=True)
-    categoriaservicio = models.ForeignKey(Categoriaservicio, models.DO_NOTHING)
+    Categoriaservicio_id = models.ForeignKey('Categoriaservicio', models.DO_NOTHING, db_column='Categoriaservicio_id')
 
     class Meta:
         managed = False

@@ -104,8 +104,8 @@
                         <td>
 
                           <div class="col-lg-7">
-                            <label for="idDepartamento">Código de Departamento</label>
-                            {{ form.idDepartamento}}
+                            <label for="id">Código de Departamento</label>
+                            {{ form.id}}
                             <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                           </div>
                         </td>
@@ -132,7 +132,7 @@
 
                       <div class="col-lg-7">
                         <button type="submit" class="btn btn-primary">Aceptar</button>
-                        <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
+                        <a href="{% url 'principal:leerdep' %}" type="submit" class="btn btn-primary">Cancelar</a>
                       </div>
 
                       </form>
