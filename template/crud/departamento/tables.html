@@ -60,7 +60,7 @@
         <div class="page-breadcrumb">
           <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Departamento</h4>
+              <h4 class="page-title">departamento</h4>
               <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -80,7 +80,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title mb-0">Creación de Departamento</h5>
+                  <h5 class="card-title mb-0">Creación de departamento</h5>
                 </div>
                 <div class="card">
                   <div class="card-body">
@@ -102,8 +102,8 @@
                                       <tr class="espacio">
                                           <td > 
                                               <div class="col-lg-7">
-                                                  <label for="idDepartamento" >Código de Departamento</label>
-                                                  {{ form.idDepartamento}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                                                  <label for="id" >Código de Departamento</label>
+                                                  {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
                                               </div>
                                           </td>
                                           <td >                                             
@@ -117,17 +117,11 @@
                                                   <label for="codigo" >Codigo</label>
                                                   {{ form.codigo }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
                                               </div>
-                                          </td>  
-                                          <td>  
-                                            <div class="col-lg-7">
-                                                <label for="categoriataller" >Categoria Taller</label>
-                                                {{ form.categoriataller}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
-                                            </div>
-                                        </td>            
+                                          </td>             
                                       </tr> 
                                       <div>              
                                           <button type="submit" class="btn btn-primary">Aceptar</button> 
-                                          <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
+                                          <a href="{% url 'principal:leerdep' %}" type="submit" class="btn btn-primary">Cancelar</a>
                                       </div> 
                                       &nbsp;
                                       &nbsp;
@@ -160,20 +154,17 @@
                       <tbody>
                         {% for departamento in object_list %}
                           <tr>
-                            <td>{{ departamento.idDepartamento}}</td>
+                            <td>{{ departamento.id}}</td>
                             <td>{{ departamento.nombre}}</td>
-                            <td>{{ Departamento.codigo }}</td>
-                            {% comment %} <td>{{ departamento.municipio_id}}</td> {% endcomment %}
-                            
-                                                      
+                            <td>{{ departamento.codigo }}</td>                          
                             <td>
-                              <form method="POST" action="eliminar/{{departamento.idDepartamento}}">
+                              <form method="POST" action="eliminar/{{departamento.id}}">
                                   {% csrf_token %}
                                   <div class="btn-group">
 
                                       <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-                                      <a href="detalle/{{departamento.idDepartamento}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                                      <a href="editar/{{departamento.idDepartamento}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                      <a href="detalle/{{departamento.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                                      <a href="editar/{{departamento.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
                                       <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                                         Eliminar
                                       </button>

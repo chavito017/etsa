@@ -105,35 +105,45 @@
                                       
                                       <!-- {{ form.as_p }} -->
                                       <tr class="espacio">
+                                          <td >
+                                              
+                                              <div class="col-lg-7">
+                                                  <label for="id">Código de Categoria servicio</label>
+                                                  {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                                              </div>
+                                          </td>
+                                          <td >
 
-                                        <td>
-                
-                                          <div class="col-lg-7">
-                                            <label for="id">Código de Municipio</label>
-                                            {{ form.id}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                                          </div>
-                                        </td>
-                                        <td>
-                
-                                          <div class="col-lg-7">
-                                            <label for="nombre">Nombre</label>
-                                            {{ form.nombre }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <div class="col-lg-7">
-                                              <label for="Departamento_id">Departamento</label>
-                                              {{ form.Departamento_id }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
-                                          </div>
-                                      </td>  
-                                        
+                                              <div class="col-lg-7" >
+                                                  <label for="descripcion">Descripcion</label>
+                                                  {{ form.descripcion  }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="col-lg-7">
+                                                  <label for="nombre" >Nombre</label>
+                                                  {{ form.nombre}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                              </div>
+                                          </td> 
+                                          <td>
+                                            <div class="col-lg-7">
+                                                <label for="precio" >Precio</label>
+                                                {{ form.precio}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                            </div>
+                                        </td>                                     
                                       </tr>
 
+                                      
+                                      
                                         <div class="col-lg-7">              
                                           <button type="submit" class="btn btn-primary">Aceptar</button> 
-                                          <a href="{% url 'principal:leermun' %}" type="submit" class="btn btn-primary">Cancelar</a>
+                                          <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
                                       </div> 
-    
+
+                                                         
+                    
+                                      
+                                      
                                   </form>
                               </div>
                           </tr>

@@ -118,6 +118,7 @@
                           <tr>
                             <td>{{ categoriataller.id}}</td>
                             <td>{{ categoriataller.nombre}}</td>
+                            <td>{{ categoriataller.descripcion}}</td>
                             {% comment %} <td>{{ categoriataller.departamento_iddepartamento}}</td>  aqui puedesponer la llave foranea {% endcomment %}
                           </tr>
                       
@@ -125,7 +126,7 @@
                       
                     </table>
                     <!-- Botón para volver a la vista principal (Home) -->
-                    <a href="../" type="submit" class="btn btn-primary">Volver</a>
+                    <a href="{% url 'principal:leerre' %}" type="submit" class="btn btn-primary">Volver</a>
                   </div>
                 </div>
               </div>
