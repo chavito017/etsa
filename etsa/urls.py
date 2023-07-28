@@ -24,8 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('principal/', include(('principal.urls','principal'))),
     path('home/', Home, name= 'index.html'),
-    path('', LoginView.as_view(template_name='login.html'), name="login"),
+    path('', LoginView.as_view(template_name='inicio.html'), name="inicio"),
     path('logout/', LogoutView.as_view(template_name='login.html'), name="logout"),
-    
+    path('login/', LoginView.as_view(template_name='login.html'), name="login"),
     
 ]
