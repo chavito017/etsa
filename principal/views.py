@@ -109,7 +109,7 @@ class UsuarioActualizar(SuccessMessageMixin,UpdateView):
     success_message = 'Usuario Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
     def get_success_url(self):               
-        return reverse('principal:leer') # Redireccionamos a la vista principal 'leer'
+        return reverse('principal:leerre') # Redireccionamos a la vista principal 'leer'
     
 class UsuarioEliminar(SuccessMessageMixin, DeleteView): 
     model = Usuario

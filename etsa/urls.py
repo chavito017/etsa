@@ -27,5 +27,6 @@ urlpatterns = [
     path('', LoginView.as_view(template_name='inicio.html'), name="inicio"),
     path('logout/', LogoutView.as_view(template_name='login.html'), name="logout"),
     path('login/', LoginView.as_view(template_name='login.html'), name="login"),
+     path('detalles/', LoginView.as_view(template_name='tienda/ver.html'), name="detalles"),
     
 ]
